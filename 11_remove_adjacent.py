@@ -10,7 +10,8 @@ Irá retornar: [1, 2, 3]
 
 def remove_adjacent(nums):
     # +++ SUA SOLUÇÃO +++
-    return
+
+    return sorted(set(nums))
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

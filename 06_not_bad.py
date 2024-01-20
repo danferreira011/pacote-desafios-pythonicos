@@ -9,9 +9,25 @@ por 'good' e retorne a string resultante.
 Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 """
 
+import re
+
+from jupyter_core.migrate import regex
+
+
 def not_bad(s):
+    #Tentativa Teste
+    '''''''''
+    string = 'This movie is not so bad'
+    ns = re.sub(r"not.*bad","good", string)
+    print(re.findall('not',ns))
+    #ns = string.replace('not so bad','good')
+    #print(ns)
+    '''''
     # +++ SUA SOLUÇÃO +++
-    return
+
+    ns = re.sub(r"not.*?bad", "good", s)
+    # print(re.findall(r'not.*bad',s))
+    return ns
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -39,3 +55,5 @@ if __name__ == '__main__':
     test(not_bad, 'This dinner is not that bad!', 'This dinner is good!')
     test(not_bad, 'This tea is not hot', 'This tea is not hot')
     test(not_bad, "It's bad yet not", "It's bad yet not")
+    test(not_bad, 'This is not so bad and i\'m not so bad', 'This is good and i\'m good')
+    test(not_bad, 'I\'m not so good, but this food is not so bad', 'I\'m not so good, but this food is good')
