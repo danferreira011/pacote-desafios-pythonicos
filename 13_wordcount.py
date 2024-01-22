@@ -24,7 +24,8 @@ B. Lista as 20 palavras mais frequêntes indicando suas ocorrências.
 
 Ou seja...
 
-Dado um arquivo letras.txt contendo as palavras: A a C c c B b b B
+Dado um ar
+quivo letras.txt contendo as palavras: A a C c c B b b B
 Quando você executa o programa: python wordcount.py --topcount letras.txt
 Ele deve imprimir as 20 palavras mais frequêntes seguidas
 do número de ocorrências, em ordem crescente de ocorrências.

@@ -25,9 +25,10 @@ def not_bad(s):
     '''''
     # +++ SUA SOLUÇÃO +++
 
-    ns = re.sub(r"not.*?bad", "good", s)
+    #ns = re.sub(r"not.*?bad", "good", s)
     # print(re.findall(r'not.*bad',s))
-    return ns
+    #return ns
+    return re.sub('not([0-9 a-zA-Z]*)?bad', 'good', s)
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

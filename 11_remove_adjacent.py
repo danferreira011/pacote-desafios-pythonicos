@@ -10,8 +10,19 @@ Irá retornar: [1, 2, 3]
 
 def remove_adjacent(nums):
     # +++ SUA SOLUÇÃO +++
+    res = []
+    for num in nums:
+        if not res:
+            res.append(num)
+        elif num != res[-1]:
+            res.append(num)
+    return res
 
-    return sorted(set(nums))
+  #  return sorted(set(nums))
+
+  # return list(dict.fromkeys(nums))
+
+  
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
