@@ -24,8 +24,7 @@ B. Lista as 20 palavras mais frequêntes indicando suas ocorrências.
 
 Ou seja...
 
-Dado um ar
-quivo letras.txt contendo as palavras: A a C c c B b b B
+Dado um arquivo letras.txt contendo as palavras: A a C c c B b b B
 Quando você executa o programa: python wordcount.py --topcount letras.txt
 Ele deve imprimir as 20 palavras mais frequêntes seguidas
 do número de ocorrências, em ordem crescente de ocorrências.
@@ -48,42 +47,41 @@ Dicas:
 * Armazene todas as palavras em caixa baixa, assim, as palavras 'A' e 'a'
   contam como a mesma palavra.
 * Use str.split() (sem parêmatros) para fazer separar as palavras.
-* Não construa todo o programade uma vez. Faça por partes executando
+* Não construa todo o programa de uma vez. Faça por partes executando
 e conferindo cada etapa do seu progresso.
 """
 
 import sys
-
-
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
-def print_words(filename):
+
+def get_wlist(filename):
     with open(filename) as arquivo:
         conteudo = arquivo.read().lower().split()
+    return conteudo
+
+def get_wfreq(conteudo):
     wdic = {}
     for w in conteudo:
         if w in wdic:
             wdic[w] += 1
         else:
             wdic[w] = 1
-    for w, freq in sorted(wdic.items()):
-        print(w, freq)
+    return wdic
 
+def print_words(filename):
+   conteudo = get_wlist(filename)
+   wdic = get_wfreq(conteudo)
 
+   for w, freq in sorted(wdic.items()):
+       print(w, freq)
 
 def print_top(filename):
-    with open(filename) as file:
-        text = file.read().lower().split()
-
-    words_dict = {}
-    for word in text:
-        if word in words_dict:
-            words_dict[word] += 1
-        else:
-            words_dict[word] = 1
+    conteudo = get_wlist(filename)
+    wdic = get_wfreq(conteudo)
 
     top_dict = {}
-    for word, freq in words_dict.items():
+    for word, freq in wdic.items():
         top_dict[freq] = word
 
     top_list = list(sorted(top_dict.items(), reverse=True))[:20]
