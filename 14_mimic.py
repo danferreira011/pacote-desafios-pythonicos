@@ -43,7 +43,12 @@ import random
 import sys
 
 
+
 def mimic_dict(filename):
+  conteudo = get_list(filename)
+  im_dic{}
+  im_dic['']=
+
   """Retorna o dicionario imitador mapeando cada palavra para a lista de
   palavras subsequentes."""
     # +++ SUA SOLUÇÃO +++
