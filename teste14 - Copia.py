@@ -16,8 +16,7 @@ with open('small.txt','r') as arquivo:
     for k,v in c:
         d[k].append(v)
     print(d.items())
-    print(d.keys())
-    print(d.values())
+
 
     #print(wdic)
 
